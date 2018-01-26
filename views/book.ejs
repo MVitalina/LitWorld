@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title><%=book.title%></title>
+    <link rel="shortcut icon" href="/images/books.ico" type="image/x-icon">
+    <meta name="description" content="Book">
+    <meta name="author" content="Vitalina">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link type="text/css" href="/stylesheets/style_bookX.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_bar.css" rel="stylesheet"/>
+</head>
+
+<body>
+<% include partials/navbar %>
+    <table>
+        <tr>
+            <th>
+            <div class="tinim">
+            <div class="im"><img src="data:image/png;base64, <%=book.image%>" alt="Не вдалось завантажити обкладинку"width="300" height="450" /></div>
+            <% if(user.role == 'admin')  {%>
+            <div class="text">
+            <a href="/books/photochange/<%=book._id%>"><img src="/images/reduct.png" width="40" height="40" /> Змінити</a>
+            </div> 
+            <% } %>
+            </th>
+            <td>
+                <h1>"<%=book.title%>", <a href="../authors/<%=author._id%>"><%=author.name%></a></h1>
+                <p></p><p><%=book.description%></p>
+                <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Зберегти книгу <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="/profile/already/<%=book._id%>">Прочитано</a></li>
+        <li><a href="/profile/want/<%=book._id%>">Хочу прочитати</a></li>
+        <li><a href="/profile/now/<%=book._id%>">Читаю зараз</a></li>
+        <li><a href="/profile/star/<%=book._id%>">Уподобані</a></li>
+      </ul>
+    </div>
+
+                <% if(user.role == 'admin')  {%>
+    <a href="/books/bookchange/<%=book._id%>">
+        <input type="submit" id="button" value="Змінити" class="btn btn-primary"></a>
+
+         
+                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Видалити книгу</button>
+  
+        <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ви впевнені, що хочете видалити цю книгу??</h4>
+            </div>
+            <div class="modal-body">
+                <p>Дію не можна буде відмінити!</p>
+            </div>
+            <div class="modal-footer">
+            <form method="post">
+                <input type="submit" id="button" value="Видалити" class="btn btn-danger"> 
+            </form>
+            </div>
+            </div>
+            </div>
+            </div>
+                <% } %>
+            </td>
+        </tr>
+        <tr>
+            <th>Жанр: </th>
+            <td><%=book.genre%></td>
+        </tr>
+        <tr>
+            <th>Видавництво: </th>
+            <td><%=book.publishing%></td>
+        </tr>
+    </table> <br>
+
+    
+</body>
+
+</html>

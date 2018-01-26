@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Результати пошуку</title>
+    <link rel="shortcut icon" href="./images/books.ico" type="image/x-icon">
+    <meta name="description" content="Book search">
+    <meta name="author" content="Vitalina">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link type="text/css" href="./stylesheets/style_search.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_bar.css" rel="stylesheet"/>
+</head>
+
+<body> 
+    <% include partials/navbar %>
+
+  <input class="search" id="myInput" type="text" placeholder="Пошук...">
+  <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Обкладинка</th>
+        <th>Назва</th>
+        <th>Автор</th>
+        <th>Жанр</th>
+        <th>Видавництво</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+    <%for (let i = 0; i < filter.length; i++) { if (filter[i] != undefined) {%>
+      <tr>
+        <td><a href='books/<%=filter[i].id%>'><img src="data:image/png;base64, <%=filter[i].image%>" alt="Не вдалось завантажити обкладинку" width="150" height="200"></a></td>
+        <td><a href='books/<%=filter[i].id%>'>"<%=filter[i].title%>"</a></td>
+        <td><a href='books/<%=filter[i].id%>'><%=filter[i].author%></td>
+        <td><a href='books/<%=filter[i].id%>'><%=filter[i].genre%></td>
+        <td><a href='books/<%=filter[i].id%>'><%=filter[i].publishing%></td>
+      </tr>
+      <%}}%>
+    </tbody>
+  </table>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+</body>
+
+</html>

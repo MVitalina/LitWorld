@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Автори</title>
+    <link rel="shortcut icon" href="./images/authors.ico" type="image/x-icon">
+    <meta name="description" content="Authors">
+    <meta name="author" content="Vitalina">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link type="text/css" href="./stylesheets/style_books.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_bar.css" rel="stylesheet"/>
+</head>
+
+<body> 
+<% include partials/navbar %>
+    <h1 id="1">Автори</h1>
+    <p>Натисніть на фото або ім'я,<br> аби відкрити профіль автора</p>
+    <p><a href="authors/authornew" class="button"/>Додати автора</a></p>
+    <div class="column">
+    <%for (let i = 6*(page-1); i < 6*page; i++) { if (authorArr[i] != undefined) {%>
+    <p><a href='authors/<%=authorArr[i].id%>'><img src="data:image/png;base64, <%=authorArr[i].image%>" alt="Не вдалось завантажити обкладинку"width="250" height="370" /><br><%=authorArr[i].name%></a></p>
+    <%}}%>
+    </div>
+
+    <div class="container">
+        <ul class="pagination">
+            <%if (page != 1) {%>
+                <li><a href='/authors?page=1'>1</a></li>
+            <%}%>
+            <%if (pages > 1) { if (page > 2) {%>
+                <li><a href='/authors?page=<%=page-1%>'>Попередня сторінка</a></li>
+            <%}%>
+            <li class="active"><a><%=page%></a></li>
+            <%if (page < pages) { if (++page !== pages){%>    
+            <li><a href='/authors?page=<%=page%>'>Наступна сторінка</a></li>
+            <%}%>
+            <li><a href='/authors?page=<%=pages%>'><%=pages%></a></li>
+            <%}}%>
+        </ul>
+    </div>
+</body>
+
+</html>

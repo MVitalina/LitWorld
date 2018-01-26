@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>LitWorld</title>
+  <link rel="shortcut icon" href="./images/books.ico" type="image/x-icon">
+  <meta name="description" content="Site about books">
+  <meta name="author" content="Vitalina">
+  <link type="text/css" href="./stylesheets/style_index.css" rel="stylesheet"/>
+  <link type="text/css" href="/stylesheets/style_bar_index.css" rel="stylesheet"/>
+  <link type="text/css" href="/stylesheets/style_form.css" rel="stylesheet"/>
+</head>
+
+<body>
+<nav class="top-menu">
+  <a class="navbar-logo" href='/'><img src="./images/logo.png"></a>
+  <ul class="menu-main">
+    <li><a href='/world'>Книжковий світ</a></li>
+    <li><a href='/search'><img class="logo" src="../../images/search.png" width="50" height="50"></a></li>
+    <%if (user) {%>
+    <li><a href='/profile'><img src="./images/login.png" width="50" height="50"></a></li>
+    <%}else{%>
+    <li><a href='/register/login'><img src="./images/login.png" width="50" height="50"></a></li>
+    <%}%>
+  </ul>
+  
+</nav>
+  <h3>Головна сторінка сайту LitWorld</h2>
+  <div id="bg" align="left">Сайт створений для відображення книг. <br> Ви можете передивлятись книги і інформацію про них. <br></div>
+  <a href="/contacts"><div class="contacts">Контакти</div></a>
+</body>
+
+</html> 

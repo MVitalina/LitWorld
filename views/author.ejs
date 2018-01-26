@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title><%=author.name%></title>
+    <link rel="shortcut icon" href="/images/books.ico" type="image/x-icon">
+    <meta name="description" content="Author">
+    <meta name="author" content="Vitalina">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link type="text/css" href="/stylesheets/style_bookX.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_bar.css" rel="stylesheet"/>
+</head>
+
+<body>
+<% include partials/navbar %>
+    <table>
+        <tr>
+            <th>
+            <div class="tinim">
+            <div class="im">
+            <img src="data:image/png;base64, <%=author.image%>" alt="Не вдалось завантажити фото"width="300" height="450" /></div>
+            <% if(user.role == 'admin')  {%><div class="text">
+            <a href="/authors/photochange/<%=author._id%>"><img src="/images/reduct.png" width="40" height="40" /> Змінити</a>
+            </div> <%}%> </div>
+            </th>
+            <td>
+                <h1><%=author.name%></h1>
+                <p><%=author.bio%></p>
+                
+                 <% if(user.role == 'admin')  {%><div class="container"><a href="/authors/authorchange/<%=author._id%>">
+        <input type="submit" id="button" value="Змінити" class="btn btn-primary"> </a> </div>
+
+        <div class="container">
+            <div class="delete">    
+                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Видалити автора</button>
+            </div>
+        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ви впевнені, що хочете видалити цього автора??</h4>
+            </div>
+            <div class="modal-body">
+                <p>Дію не можна буде відмінити!</p>
+            </div>
+            <div class="modal-footer">
+            <form method="post">
+                <input type="submit" id="button" value="Видалити" class="btn btn-danger"> 
+            </form>
+            </div>
+            </div>
+    </div>
+    </div>
+        <% } %>
+            </td>
+        </tr>
+        <tr>
+            <th>Книги: </th>
+            <td> <%for (let i = 0; i < books.length; i++) {%>
+            <a href="../books/<%=books[i]._id%>"><%=books[i].title%> </a><br>
+            <%}%></td> 
+        </tr>
+    </table> <br>
+</body>
+
+</html>

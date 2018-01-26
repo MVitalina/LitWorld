@@ -1,0 +1,77 @@
+body {
+    color: #580000;
+    background-image: url("../images/bg12.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+table {
+    margin-left: 40px;
+    font-family: Florence, cursive; 
+    font-size: 20px;
+}
+p, h1 {
+    font-family: Florence, cursive; 
+    margin-right: 200px;  
+    display: table;
+    background-color: rgba(255, 255, 255, 0.66); 
+}
+
+.im{
+    box-shadow: 0px 0px 3px rgb(0, 0, 0);
+}
+
+th {
+    text-align: right;
+    padding: 20px;
+    vertical-align: top;
+}
+
+.container {
+    width:90%;
+}
+
+a {
+    text-decoration: none;
+    text-decoration: underline;
+    color: #580000;
+}
+a:hover {
+    text-decoration: none;
+    text-decoration: underline;
+    color: #991d1d;
+   }
+
+   .text {
+    display:none;
+   }
+   .tinim:hover {
+    display:inline-block;   
+    position:relative;
+}
+.tinim:hover a {
+    text-decoration: none; 
+}
+.tinim:hover .text {
+    display:block;
+    position:absolute;
+    bottom:0;
+    width:50%;
+    box-sizing:border-box;
+    text-decoration: none; 
+    font-weight: bold;
+    color: #580000;          
+
+    padding:10px;
+    background-color:rgba(255, 255, 255, 0.411);
+    font-family: Florence, cursive; 
+    
+}
+.tinim:hover h6 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:30px;
+    font-weight: bold
+}
+.tinim:hover span {
+    font-size:15px; 
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Книги</title>
+    <link rel="shortcut icon" href="./images/books.ico" type="image/x-icon">
+    <meta name="description" content="Books">
+    <meta name="author" content="Vitalina">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link type="text/css" href="./stylesheets/style_books.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_bar.css" rel="stylesheet"/>
+</head>
+
+<body> 
+<% include partials/navbar %>
+    <h1 id="1">Книги</h1>
+    <p>Натисніть на обкладинку або назву,<br> аби відкрити сторінку книги</p>
+    <p><a href="books/booknew" class="button"/>Додати книгу</a></p>
+    <div class="column">
+    <%for (let i = 6*(page-1); i < 6*page; i++) { if (bookArr[i] != undefined) {%>
+    <p><a href='books/<%=bookArr[i].id%>'><img src="data:image/png;base64, <%=bookArr[i].image%>" alt="Не вдалось завантажити обкладинку" width="250" height="370" /><br>"<%=bookArr[i].title%>", <%=bookArr[i].author%></a></p>
+    <%}}%>
+    </div>
+
+    <div class="container">
+        <ul class="pagination">
+            <%if (page != 1) {%>
+                <li><a href='/books?page=1'>1</a></li>
+            <%}%>
+            <%if (pages > 1) { if (page > 2) {%>
+                <li><a href='/books?page=<%=page-1%>'>Попередня сторінка</a></li>
+            <%}%>
+            <li class="active"><a><%=page%></a></li>
+            <%if (page < pages) { if (++page !== pages){%>    
+            <li><a href='/books?page=<%=page%>'>Наступна сторінка</a></li>
+            <%}%>
+            <li><a href='/books?page=<%=pages%>'><%=pages%></a></li>
+            <%}}%>
+        </ul>
+    </div>
+</body>
+
+</html>

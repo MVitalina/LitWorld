@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Зміна автора</title>
+    <link rel="shortcut icon" href="/images/books.ico" type="image/x-icon">
+    <meta name="description" content="Author upd">
+    <meta name="author" content="Vitalina">
+    <link type="text/css" href="/stylesheets/style_bookX.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_bar.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_form.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <% include partials/navbar %>
+    <div class="form-style-8">
+        <h2>Редагування інформації про автора</h2>
+        <form method="post" enctype="multipart/form-data" id="newb">
+            <input type="text" name="name" placeholder="Ім'я автора" value="<%=author.name%>"/>
+            <input type="text" name="bio" placeholder="Біографія" value="<%=author.bio%>"/>
+            <input type="submit" value="Змінити автора">
+        </form>
+        
+    </div>
+</body>
+
+</html>

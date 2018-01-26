@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <link rel="shortcut icon" href="./images/books.ico" type="image/x-icon">
+    <meta name="description" content="Books">
+    <meta name="author" content="Vitalina">
+    <link type="text/css" href="./stylesheets/style_books.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_bar.css" rel="stylesheet"/>
+</head>
+
+<body> 
+    <% include partials/navbar %>
+
+    <h1 id="1">Користувачі</h1>
+    
+    <%for (let i = 10*(page-1); i < 10*page; i++) { if (userArr[i] != undefined) {%>
+
+    <p><br><%=i%></p>
+    <p>Ім'я: <%=userArr[i].name%></p>
+    <p>Логін: <%=userArr[i].username%></p>
+    <%}}%>
+    
+
+    <div class="container">
+        <ul class="pagination">
+            <%if (page != 1) {%>
+                <li><a href='/users?page=1'>1</a></li>
+            <%}%>
+            <%if (pages > 1) { if (page > 2) {%>
+                <li><a href='/users?page=<%=page-1%>'>Попередня сторінка</a></li>
+            <%}%>
+            <li class="active"><a><%=page%></a></li>
+            <%if (page < pages) { if (++page !== pages){%>    
+            <li><a href='/users?page=<%=page%>'>Наступна сторінка</a></li>
+            <%}%>
+            <li><a href='/users?page=<%=pages%>'><%=pages%></a></li>
+            <%}}%>
+        </ul>
+    </div>
+</body>
+
+</html>

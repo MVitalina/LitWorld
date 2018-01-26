@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Моя полиця</title>
+    <link rel="shortcut icon" href="/images/books.ico" type="image/x-icon">
+    <meta name="description" content="My books">
+    <meta name="author" content="Vitalina">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link type="text/css" href="/stylesheets/style_mybooks.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_bar.css" rel="stylesheet"/>
+</head>
+
+<body>
+<% include partials/navbar %>
+
+<a href='/profile/mybooks/already'>
+<div class="tinim">
+    <img src="../images/already.png"/>
+    <div class="text">
+        <h6>Прочитані</h6>
+</div> 
+</div> </a>
+
+<a href='/profile/mybooks/want'>
+<div class="tinim">
+    <img src="../images/want.png" class="image"/>
+    <div class="text">
+        <h6>Хочу прочитати</h6>
+</div> 
+</div> </a>
+
+<br>
+
+<a href='/profile/mybooks/now'>
+<div class="tinim">
+    <img src="../images/now.png" class="image" />
+    <div class="text">
+        <h6>Читаю зараз</h6>
+</div> 
+</div> </a>
+
+<a href='/profile/mybooks/star'>
+<div class="tinim">
+    <img src="../images/star.png" class="image" />
+    <div class="text">
+        <h6>Уподобані</h6>
+</div> 
+</div> </a>
+
+</body>
+
+</html>

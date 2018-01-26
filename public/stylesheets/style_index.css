@@ -1,0 +1,26 @@
+h3 {
+    color: #580000;
+    font: bold 40px/10px Florence, cursive; 
+}
+
+body {
+    color: #580000;
+    background-image: url("../images/bg2.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Florence, cursive; 
+    font-size: 30px;
+    padding: 20px;
+}
+
+.contacts {
+    text-decoration: none;
+    color: #580000;
+    position: fixed;
+    right: 0; bottom: 0;
+    padding: 5px;
+    background: #f3c059ab; 
+    width: 11%;
+   }
+
+

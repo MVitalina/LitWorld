@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LitWorld</title>
+  <link rel="shortcut icon" href="./images/books.ico" type="image/x-icon">
+  <meta name="description" content="Site about books">
+  <meta name="author" content="Vitalina">
+  <link type="text/css" href=".././stylesheets/style_index.css" rel="stylesheet"/>
+  <link type="text/css" href="/stylesheets/style_bar_index.css" rel="stylesheet"/>
+  <link type="text/css" href="/stylesheets/style_form.css" rel="stylesheet"/>
+</head>
+
+<body>
+<nav class="top-menu">
+  <a class="navbar-logo" href='/'><img src=".././images/logo.png"></a>
+  <ul class="menu-main">
+    <li><a href='/login'><img src=".././images/login.png" width="50" height="50"></a></li>
+  </ul>
+</nav>
+<div class="form-style-8">
+        <h2>Реєстрація</h2>
+        <form method="post" enctype="multipart/form-data" id="newb">
+            <input type="text" name="name" placeholder="Ім'я" required />
+            <input type="text" name="username" placeholder="Логін" required /> <div><%=error%></div>
+            <input type="password" name="password" id="p" placeholder="Пароль" required/>
+            <textarea rows="4" cols="50" name="bio" form="newb"placeholder="Біо"></textarea>
+            <input type='file' name="image" required/>
+            <label><input type="submit" value="Зареєструватись">
+            <a href='/register/login'>Вхід</a></label>
+        </form></div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<nav class="top-menu">
+    <a class="navbar-logo" href='/'><img src="../../images/logoS.png" alt="err"></a>
+    <ul class="menu-main">
+        <li><a href='/world'>Книжковий світ</a></li>
+        <li><a href='/search'><img class="logo" src="../../images/search.png" width="50" height="50"></a></li>
+        <%if (user) {%>
+        <li><a href='/profile'><img class="logo" src="../../images/login.png" width="50" height="50"></a></li>
+        <%}else{%>
+        <li><a href='/register/login'><img class="logo" src="../images/login.png" width="50" height="50"></a></li>
+        <%}%>
+    </ul>
+</nav>

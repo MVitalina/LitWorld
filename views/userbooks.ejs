@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Результати пошуку</title>
+    <link rel="shortcut icon" href="./images/books.ico" type="image/x-icon">
+    <meta name="description" content="Book search">
+    <meta name="author" content="Vitalina">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link type="text/css" href="/stylesheets/style_search.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_bar.css" rel="stylesheet"/>
+</head>
+
+<body> 
+    <% include partials/navbar %>
+    <h1 id="1"><%=type%></h1>
+    <p>Натисніть на обкладинку або назву,<br> аби відкрити сторінку книги</p>
+    <%for (let i = 0; i < arr.length; i++) { if (arr[i] != undefined) {%>
+    <p><a href='/books/<%=arr[i].bookid%>'><%=arr[i].book%></a></p>
+    <%}}%>
+</body>
+
+</html>

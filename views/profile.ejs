@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Профіль</title>
+    <link rel="shortcut icon" href="/images/books.ico" type="image/x-icon">
+    <meta name="description" content="Book">
+    <meta name="author" content="Vitalina">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link type="text/css" href="/stylesheets/style_profile.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/style_bar.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <% include partials/navbar %>
+    <table>
+        <tr>
+            <th><img src="data:image/png;base64, <%=user.image%>" alt="Не вдалось завантажити фото"width="400" /></th>
+            <td>
+            <h1><%=user.name%></h1>
+            <a href='/profile/mybooks'>
+                    <div class="tinim">
+                        <img src="../images/mybooks.png" width="200" />
+                    </div> </a>
+            <p><%=user.bio%></p></td>
+        </tr>
+        <tr>
+            <th>Username: </th>
+            <td><%=user.username%></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><a href='/register/logout'>Вийти</a></td>
+        </tr>
+        <%if (user.role == "admin") {%>
+        <tr>
+            <th></th>
+            <td><a href='/users'>Всі користувачі</a></td>
+        </tr>
+        <%}%>
+    </table> <br>
+    
+</body>
+
+</html>

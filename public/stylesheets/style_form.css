@@ -1,0 +1,86 @@
+.form-style-8{
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 500px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.69);
+    margin-left: 200px;
+    margin-top: 40px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+.form-style-8 h2{
+    background-color: #A494A8;
+    border: 1px solid #EDA5FF;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #580000;
+    font-size: 18px;
+    font: bold 20px/10px; 
+    padding: 20px;
+    margin: -30px -30px 30px -30px;
+}
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select 
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+
+.form-style-8 input[type="button"], 
+.form-style-8 input[type="submit"]{
+    -moz-box-shadow: inset 0px 1px 0px 0px #EDA5FF;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #EDA5FF;
+    box-shadow: inset 0px 1px 0px 0px #EDA5FF;
+    background-color: #F3C1FF;
+    border: 1px solid #EDA5FF;
+    display: inline-block;
+    cursor: pointer;
+    color: #580000;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+    padding: 8px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.form-style-8 input[type="button"]:hover, 
+.form-style-8 input[type="submit"]:hover {
+    background:linear-gradient(to bottom, #741A1A 5%, #793535 100%);
+    background-color:#580000;
+}
+
+.form-style-8 a {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    color: #580000;
+    padding: 8px 30px;
+}
+
+textarea {
+    resize: vertical;
+  }
+
+  label{
+    display: block;
+  }
